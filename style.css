@@ -1,0 +1,283 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    background: url('https://i.pinimg.com/736x/89/52/de/8952de488802fe3b0ef308e68a398158.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #c2f0c2;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+header {
+    background-color: #3f5f44;
+    padding: 40px 20px;
+    border-bottom: 4px solid #2e4d39;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    animation: fadeSlideUp 1s ease forwards;
+}
+
+h1 {
+    font-size: 28px;
+    color: #c2f0c2;
+    letter-spacing: 2px;
+    animation: fadeSlideUp 1s ease forwards;
+}
+
+nav p {
+    font-size: 16px;
+    background-color: #6e8b6e;
+    padding: 14px 28px;
+    border-radius: 14px;
+    display: inline-block;
+    color: white;
+    margin-top: 30px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    animation: fadeSlideUp 1.2s ease forwards;
+}
+
+main {
+    flex: 1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+picture {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+picture img {
+    width: 320px;
+    height: 320px;
+    object-fit: cover;
+    border: 6px solid #88b488;
+    border-radius: 20px;
+    box-shadow: 6px 6px 12px rgba(0,0,0,0.2);
+    display: none;
+    transition: transform 0.3s ease;
+    background-color: white;
+    padding: 8px;
+    animation: zoomIn 0.4s ease forwards;
+    animation: ease-in-out;
+}
+
+picture img:hover {
+    transform: scale(1.05);
+}
+
+button {
+    background-color: #5f8c6b;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 14px 36px;
+    cursor: pointer;
+    border-radius: 16px;
+    font-family: 'Press Start 2P', cursive;
+    transition: background 0.3s ease;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+    animation: fadeSlideUp 1.4s ease forwards;
+    margin: 10px 10px;
+       gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #3b5d44;
+    animation: pulse 0.6s ease-in-out infinite;
+}
+
+footer {
+    padding: 25px 10px;
+    font-size: 15px;
+    color: #c2f0c2;
+    background-color: #2f3e34;
+    border-top: 4px solid #5d7a5d;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 600px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    header {
+        padding: 30px 10px;
+    }
+
+    h1 {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    nav p {
+        font-size: 12px;
+        padding: 10px 18px;
+        margin-top: 20px;
+        max-width: 90%;
+    }
+
+    picture {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    picture img {
+        width: 90vw;
+        height: auto;
+        max-height: 300px;
+        border-width: 4px;
+        border-radius: 14px;
+        padding: 6px;
+        max-width: 95%;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 12px 28px;
+        border-radius: 12px;
+        margin: 5px 10px;
+        display: inline-block;
+      
+     gap: 8px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    main {
+        padding: 20px 10px;
+        min-height: auto;
+    }
+
+    footer {
+        font-size: 10px;
+        padding: 20px 8px;
+    }
+
+      .message-container,
+    #messageBox {
+        font-size: 16px;
+        padding: 18px;
+        word-break: break-word;
+        line-height: 1.8;
+        max-width: 90%;
+        margin: 16px auto;
+        background-color: #c2f0c2;
+        color: #222;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    
+    }
+
+    /* ENVELOPE STYLING */
+    .envelope {
+        position: relative;
+        width: 300px;
+        height: 200px;
+        margin: 30px auto;
+        perspective: 1000px;
+        display: none;
+        animation: slideUp 1s ease forwards;
+    }
+
+    .flap {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #88b488;
+        transform-origin: top;
+        transform: rotateX(0deg);
+        transition: transform 1s ease;
+        border-radius: 8px;
+        z-index: 2;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .letter {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow: auto;
+        z-index: 1;
+        border-radius: 8px;
+        font-size: 13px; /* 🔧 Slightly bigger text inside envelope */
+        color: #333;
+        font-family: 'Courier New', monospace;
+    }
+
+    .envelope.open .flap {
+        transform: rotateX(-140deg);
+    }
+
+    @keyframes slideUp {
+        0% {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
